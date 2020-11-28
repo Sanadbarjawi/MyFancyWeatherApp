@@ -13,6 +13,8 @@ final class WeatherTodayPresenter: BasePresenter {
 
     weak var view: WeatherTodayView?
 
+    private(set) lazy var selectedCountry: CountryModel = UserDefaults.standard.retrieve(object: CountryModel.self, fromKey: UserDefaultNames.selectedCountry) ?? countries.first!//forced because we know the array is there below
+
     private let service: WeatherService
 
     let countries: [CountryModel] = [
@@ -25,8 +27,9 @@ final class WeatherTodayPresenter: BasePresenter {
 
     private var items: [Configurable] = []
 
+    /// weather data
     private(set) var weatherData: WeatherData? {
-        willSet {
+        willSet {///items are being accordingly updated whenever the weatherdata is set
             items = []
             if let data = newValue {
                 items.append(data.main)
@@ -36,10 +39,14 @@ final class WeatherTodayPresenter: BasePresenter {
         }
     }
 
+    /// intisialising using the service, DI
+    /// - Parameter weatherService: service to call the API
     init(_ weatherService: WeatherService) {
         self.service = weatherService
     }
 
+    /// attaching the view responsible to do and reflect UI Changes
+    /// - Parameter view: adopting View
     func attachView(_ view: WeatherTodayView) {
         self.view = view
     }
@@ -48,12 +55,14 @@ final class WeatherTodayPresenter: BasePresenter {
         self.view = nil
     }
 
+    /// fetching the weather data from API
+    /// - Parameter cityId: city iD
     func getWeatherData(for cityId: Int) {
         service.getWeatherData(cityId: cityId) { [weak self] (result) in
             switch result {
             case .success(let weatherData):
                 self?.weatherData = weatherData
-                self?.view?.didSucceed()
+                self?.view?.didSucceed()//once succeeded update the UI using the delegated View
             case .failure(let error):
                 self?.view?.didFail(with: error as NSError)
             }
@@ -66,5 +75,21 @@ final class WeatherTodayPresenter: BasePresenter {
 
         return (items.count, items.map{($0.cellIdentifier ?? "not implemented")}, items)
     }
+
+    func setSelectedCountry(using country: CountryModel) {
+        selectedCountry = country
+        UserDefaults.standard.save(customObject: country, inKey:  UserDefaultNames.selectedCountry)
+    }
+
+    func getSelectedRow() -> Int {
+        var selectedRow = 0
+        countries.enumerated().forEach { (element) in
+            if element.element.id == selectedCountry.id {
+                selectedRow = element.offset
+            }
+        }
+        return selectedRow
+    }
+
 
 }

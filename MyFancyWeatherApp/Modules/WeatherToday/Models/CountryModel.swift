@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CountryModel: Configurable {
+struct CountryModel: Configurable, Codable {
     var id: Int
     var name: String
 }
