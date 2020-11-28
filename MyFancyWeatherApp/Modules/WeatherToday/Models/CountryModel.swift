@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CountryModel {
+struct CountryModel: Configurable {
     var id: Int
     var name: String
 }

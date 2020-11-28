@@ -85,7 +85,7 @@ extension WeatherTodayController: WeatherTodayView {
     }
 
     func stopLoading() {
-        
+
     }
 
 }
