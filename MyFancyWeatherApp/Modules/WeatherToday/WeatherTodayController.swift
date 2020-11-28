@@ -7,11 +7,15 @@
 
 import UIKit
 
-final class WeatherTodayController: UIViewController {
+final class WeatherTodayController: BaseMvpController<WeatherTodayView, WeatherTodayPresenter> {
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var citiesPickerView: UIPickerView!
     @IBOutlet private weak var cityStatusLabel: UILabel!
+
+    override func createPresenter() -> WeatherTodayPresenter {
+        return WeatherTodayPresenter(WeatherService())
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +40,11 @@ extension WeatherTodayController: UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 1
+        return presenter.countries.count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "sss"
+        return presenter.countries[row].name
     }
 
 }
@@ -63,6 +67,25 @@ extension WeatherTodayController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
+    }
+
+}
+
+extension WeatherTodayController: WeatherTodayView {
+    func didSucceed() {
+
+    }
+
+    func didFail(with error: NSError) {
+
+    }
+
+    func startLoading() {
+
+    }
+
+    func stopLoading() {
+        
     }
 
 }
