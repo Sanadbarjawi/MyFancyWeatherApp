@@ -44,6 +44,10 @@ struct Main: Codable, Configurable {
         case tempMax = "temp_max"
         case pressure, humidity
     }
+
+    var cellIdentifier: String? {
+         "\(MainTableCell.self)"
+    }
 }
 
 // MARK: - Wind

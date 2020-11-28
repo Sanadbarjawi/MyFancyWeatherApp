@@ -49,4 +49,15 @@ class WeatherTodayPresenter: BasePresenter {
         }
     }
 
+    func getWeatherItemsToPresent() -> [Configurable] {
+        var items: [Configurable] = []
+        if let data = weatherData {
+            items.append(data.main)
+            items.append(data.clouds)
+            items.append(data.wind)
+            items.append(data.weather.first!)
+        }
+        return items
+    }
+
 }

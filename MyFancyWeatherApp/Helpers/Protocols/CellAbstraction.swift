@@ -7,7 +7,12 @@
 
 import Foundation
 
-protocol Configurable {}
+protocol Configurable {
+    var cellIdentifier: String? {get}
+}
+extension Configurable {
+    var cellIdentifier: String? {get {"not implemented"} set{}}
+}
 
 protocol CellableDelegate: class {}
 
