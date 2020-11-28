@@ -17,7 +17,7 @@ class TabbarController: UITabBarController {
 
         imagesOfTheDayController.tabBarItem = UITabBarItem(title: "Images of the day", image: nil, selectedImage: nil)
         weatherTodayController.tabBarItem = UITabBarItem(title: "Weather today", image: nil, selectedImage: nil)
-        self.tabBar.tintColor = .red
+        self.tabBar.tintColor = .systemBlue
         
         let viewControllers = [
             weatherTodayController,
