@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9882B032572AE5E00D23D8E /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9882B022572AE5E00D23D8E /* TabbarController.swift */; };
+		C9882B082572B00A00D23D8E /* WeatherTodayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9882B072572B00A00D23D8E /* WeatherTodayController.swift */; };
+		C9882B0D2572B08000D23D8E /* ImagesOfTheDayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9882B0C2572B08000D23D8E /* ImagesOfTheDayController.swift */; };
 		C9AA5E26257236C300538166 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA5E25257236C300538166 /* AppDelegate.swift */; };
 		C9AA5E2F257236C500538166 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5E2E257236C500538166 /* Assets.xcassets */; };
 		C9AA5E32257236C500538166 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5E30257236C500538166 /* LaunchScreen.storyboard */; };
@@ -32,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C9882B022572AE5E00D23D8E /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		C9882B072572B00A00D23D8E /* WeatherTodayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTodayController.swift; sourceTree = "<group>"; };
+		C9882B0C2572B08000D23D8E /* ImagesOfTheDayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesOfTheDayController.swift; sourceTree = "<group>"; };
 		C9AA5E22257236C300538166 /* MyFancyWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFancyWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AA5E25257236C300538166 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9AA5E2E257236C500538166 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +103,9 @@
 				C9AA5E2E257236C500538166 /* Assets.xcassets */,
 				C9AA5E30257236C500538166 /* LaunchScreen.storyboard */,
 				C9AA5E33257236C500538166 /* Info.plist */,
+				C9882B022572AE5E00D23D8E /* TabbarController.swift */,
+				C9882B072572B00A00D23D8E /* WeatherTodayController.swift */,
+				C9882B0C2572B08000D23D8E /* ImagesOfTheDayController.swift */,
 			);
 			path = MyFancyWeatherApp;
 			sourceTree = "<group>";
@@ -249,6 +258,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9AA5E26257236C300538166 /* AppDelegate.swift in Sources */,
+				C9882B032572AE5E00D23D8E /* TabbarController.swift in Sources */,
+				C9882B082572B00A00D23D8E /* WeatherTodayController.swift in Sources */,
+				C9882B0D2572B08000D23D8E /* ImagesOfTheDayController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
