@@ -15,6 +15,7 @@
 		C9AA5E32257236C500538166 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5E30257236C500538166 /* LaunchScreen.storyboard */; };
 		C9CB5F8C2572C0D6003CD569 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB5F8B2572C0D6003CD569 /* EndPoints.swift */; };
 		C9CB5F8F2572C13B003CD569 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB5F8E2572C13B003CD569 /* Environment.swift */; };
+		C9CB5F922572C32F003CD569 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB5F912572C32F003CD569 /* WeatherDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C9CB5F742572C061003CD569 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		C9CB5F8B2572C0D6003CD569 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		C9CB5F8E2572C13B003CD569 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		C9CB5F912572C32F003CD569 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,18 +65,67 @@
 			isa = PBXGroup;
 			children = (
 				C9AA5E25257236C300538166 /* AppDelegate.swift */,
-				C9AA5E2E257236C500538166 /* Assets.xcassets */,
-				C9AA5E30257236C500538166 /* LaunchScreen.storyboard */,
-				C9AA5E33257236C500538166 /* Info.plist */,
-				C9882B022572AE5E00D23D8E /* TabbarController.swift */,
-				C9882B072572B00A00D23D8E /* WeatherTodayController.swift */,
-				C9882B0C2572B08000D23D8E /* ImagesOfTheDayController.swift */,
-				C9CB5F732572C057003CD569 /* Development.xcconfig */,
-				C9CB5F742572C061003CD569 /* Production.xcconfig */,
-				C9CB5F8B2572C0D6003CD569 /* EndPoints.swift */,
-				C9CB5F8E2572C13B003CD569 /* Environment.swift */,
+				C9CB5F9D2572C51B003CD569 /* Modules */,
+				C9CB5F9C2572C4FF003CD569 /* Networking */,
+				C9CB5F9A2572C4E2003CD569 /* Environment */,
+				C9CB5F992572C4B3003CD569 /* Resources */,
 			);
 			path = MyFancyWeatherApp;
+			sourceTree = "<group>";
+		};
+		C9CB5F962572C47F003CD569 /* WeatherToday */ = {
+			isa = PBXGroup;
+			children = (
+				C9882B072572B00A00D23D8E /* WeatherTodayController.swift */,
+				C9CB5F912572C32F003CD569 /* WeatherDataModel.swift */,
+			);
+			path = WeatherToday;
+			sourceTree = "<group>";
+		};
+		C9CB5F982572C48F003CD569 /* ImagesofTheDay */ = {
+			isa = PBXGroup;
+			children = (
+				C9882B0C2572B08000D23D8E /* ImagesOfTheDayController.swift */,
+			);
+			path = ImagesofTheDay;
+			sourceTree = "<group>";
+		};
+		C9CB5F992572C4B3003CD569 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C9AA5E30257236C500538166 /* LaunchScreen.storyboard */,
+				C9AA5E2E257236C500538166 /* Assets.xcassets */,
+				C9AA5E33257236C500538166 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C9CB5F9A2572C4E2003CD569 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				C9CB5F732572C057003CD569 /* Development.xcconfig */,
+				C9CB5F742572C061003CD569 /* Production.xcconfig */,
+				C9CB5F8E2572C13B003CD569 /* Environment.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		C9CB5F9C2572C4FF003CD569 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C9CB5F8B2572C0D6003CD569 /* EndPoints.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C9CB5F9D2572C51B003CD569 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C9882B022572AE5E00D23D8E /* TabbarController.swift */,
+				C9CB5F982572C48F003CD569 /* ImagesofTheDay */,
+				C9CB5F962572C47F003CD569 /* WeatherToday */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +199,7 @@
 			files = (
 				C9AA5E26257236C300538166 /* AppDelegate.swift in Sources */,
 				C9CB5F8F2572C13B003CD569 /* Environment.swift in Sources */,
+				C9CB5F922572C32F003CD569 /* WeatherDataModel.swift in Sources */,
 				C9CB5F8C2572C0D6003CD569 /* EndPoints.swift in Sources */,
 				C9882B032572AE5E00D23D8E /* TabbarController.swift in Sources */,
 				C9882B082572B00A00D23D8E /* WeatherTodayController.swift in Sources */,
@@ -287,12 +339,13 @@
 		};
 		C9AA5E4D257236C500538166 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9CB5F732572C057003CD569 /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDZ9JJAWHH;
-				INFOPLIST_FILE = MyFancyWeatherApp/Info.plist;
+				INFOPLIST_FILE = MyFancyWeatherApp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,12 +360,13 @@
 		};
 		C9AA5E4E257236C500538166 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9CB5F742572C061003CD569 /* Production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDZ9JJAWHH;
-				INFOPLIST_FILE = MyFancyWeatherApp/Info.plist;
+				INFOPLIST_FILE = MyFancyWeatherApp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
