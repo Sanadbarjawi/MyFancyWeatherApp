@@ -13,7 +13,7 @@ final class WeatherTodayPresenter: BasePresenter {
 
     weak var view: WeatherTodayView?
 
-    private(set) lazy var selectedCountry: CountryModel = UserDefaults.standard.retrieve(object: CountryModel.self, fromKey: UserDefaultNames.selectedCountry) ?? countries.first!//forced because we know the array is there below
+    private(set) var selectedCountry: CountryModel!
 
     private let service: WeatherService
 
@@ -43,6 +43,7 @@ final class WeatherTodayPresenter: BasePresenter {
     /// - Parameter weatherService: service to call the API
     init(_ weatherService: WeatherService) {
         self.service = weatherService
+        self.selectedCountry = UserDefaults.standard.retrieve(object: CountryModel.self, fromKey: UserDefaultNames.selectedCountry) ?? countries.first!//forced because we know the array is there below
     }
 
     /// attaching the view responsible to do and reflect UI Changes
@@ -56,9 +57,8 @@ final class WeatherTodayPresenter: BasePresenter {
     }
 
     /// fetching the weather data from API
-    /// - Parameter cityId: city iD
-    func getWeatherData(for cityId: Int) {
-        service.getWeatherData(cityId: cityId) { [weak self] (result) in
+    func getWeatherData() {
+        service.getWeatherData(cityId: selectedCountry.id) { [weak self] (result) in
             switch result {
             case .success(let weatherData):
                 self?.weatherData = weatherData

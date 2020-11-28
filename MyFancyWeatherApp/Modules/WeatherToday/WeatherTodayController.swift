@@ -21,7 +21,7 @@ final class WeatherTodayController: BaseMvpController<WeatherTodayView, WeatherT
         super.viewDidLoad()
         configureCitiesPickerView()
         configureTableView()
-        presenter.getWeatherData(for: presenter.selectedCountry.id)
+        presenter.getWeatherData()
     }
 
     private func configureCitiesPickerView() {
@@ -55,6 +55,7 @@ extension WeatherTodayController: UIPickerViewDataSource {
 extension WeatherTodayController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         presenter.setSelectedCountry(using: presenter.countries[row])
+        presenter.getWeatherData()
     }
 }
 
