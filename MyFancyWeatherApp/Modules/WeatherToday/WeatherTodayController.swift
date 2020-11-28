@@ -12,6 +12,7 @@ final class WeatherTodayController: BaseMvpController<WeatherTodayView, WeatherT
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var citiesPickerView: UIPickerView!
     @IBOutlet private weak var cityStatusLabel: UILabel!
+    @IBOutlet weak var conditionImageView: UIImageView!
 
     override func createPresenter() -> WeatherTodayPresenter {
         return WeatherTodayPresenter(WeatherService())
@@ -84,6 +85,9 @@ extension WeatherTodayController: WeatherTodayView {
     func didSucceed() {
         tableView.reloadData()
         cityStatusLabel.text = presenter.weatherData?.weather.first?.main
+
+        let icon = presenter.weatherData?.weather.first?.icon ?? ""
+        conditionImageView.setImage(using:     "http://openweathermap.org/img/wn/\(icon)@2x.png")
     }
 
     func didFail(with error: NSError) {}

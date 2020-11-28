@@ -39,7 +39,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="JjG-Ze-HjC">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="328.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="402.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2X5-vg-mAC">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="207.5"/>
@@ -54,15 +54,23 @@
                                                 <edgeInsets key="layoutMargins" top="8" left="12" bottom="8" right="12"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="vRo-Xi-ZRN">
-                                                <rect key="frame" x="0.0" y="223.5" width="414" height="105"/>
+                                                <rect key="frame" x="0.0" y="223.5" width="414" height="179"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMT-Zm-D0n">
-                                                        <rect key="frame" x="12" y="41.5" width="178" height="22.5"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="0nF-zX-qc9">
+                                                        <rect key="frame" x="12" y="8" width="178" height="163"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E1x-NN-tjb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="178" height="128"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMT-Zm-D0n">
+                                                                <rect key="frame" x="0.0" y="140" width="178" height="23"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cud-mA-5XB">
-                                                        <rect key="frame" x="202" y="8" width="200" height="89"/>
+                                                        <rect key="frame" x="202" y="8" width="200" height="163"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="200" id="pFm-1A-T4k"/>
                                                         </constraints>
@@ -73,7 +81,7 @@
                                         </subviews>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aeZ-rU-Fb1">
-                                        <rect key="frame" x="0.0" y="328.5" width="414" height="567.5"/>
+                                        <rect key="frame" x="0.0" y="402.5" width="414" height="493.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainTableCell" id="aUs-yA-lMC" customClass="MainTableCell" customModule="MyFancyWeatherApp" customModuleProvider="target">
@@ -273,6 +281,7 @@
                     <connections>
                         <outlet property="citiesPickerView" destination="Cud-mA-5XB" id="eJ7-1R-6h4"/>
                         <outlet property="cityStatusLabel" destination="HMT-Zm-D0n" id="y8z-Vl-0p0"/>
+                        <outlet property="conditionImageView" destination="E1x-NN-tjb" id="5n8-Lq-FSh"/>
                         <outlet property="tableView" destination="aeZ-rU-Fb1" id="NAc-kV-icN"/>
                     </connections>
                 </viewController>

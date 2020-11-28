@@ -29,12 +29,11 @@ extension UIImageView {
     ///   - completion: completion handler passing an returning the image if found
 
     func setImage(using url: String,
-                  placeholderImage: UIImage? = #imageLiteral(resourceName: "ic_placeholder"),
                   completion: ((UIImage?) -> Void)? = nil) {
 
 
         self.kf.setImage(with: URL(string: url),
-                         placeholder: placeholderImage, completionHandler:  { (result) in
+                          completionHandler:  { (result) in
                             switch result {
 
                             case .success(let imageVals):
