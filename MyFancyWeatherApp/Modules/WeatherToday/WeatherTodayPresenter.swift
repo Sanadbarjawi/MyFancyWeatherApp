@@ -57,6 +57,7 @@ final class WeatherTodayPresenter: BasePresenter {
     }
 
     /// fetching the weather data from API
+    @objc
     func getWeatherData() {
         service.getWeatherData(cityId: selectedCountry.id) { [weak self] (result) in
             switch result {

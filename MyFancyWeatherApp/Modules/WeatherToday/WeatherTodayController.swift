@@ -13,7 +13,7 @@ final class WeatherTodayController: BaseMvpController<WeatherTodayView, WeatherT
     @IBOutlet private weak var citiesPickerView: UIPickerView!
     @IBOutlet private weak var cityStatusLabel: UILabel!
     @IBOutlet weak var conditionImageView: UIImageView!
-
+    private var timer: Timer?
     override func createPresenter() -> WeatherTodayPresenter {
         return WeatherTodayPresenter(WeatherService())
     }
@@ -23,6 +23,14 @@ final class WeatherTodayController: BaseMvpController<WeatherTodayView, WeatherT
         configureCitiesPickerView()
         configureTableView()
         presenter.getWeatherData()
+        configureAutomaticRefresh()
+        configureAutomaticRefresh()
+    }
+
+    private func configureAutomaticRefresh() {
+        if let presenter = self.presenter {
+            timer = Timer.scheduledTimer(timeInterval: 120, target: presenter,selector: #selector(presenter.getWeatherData), userInfo: nil, repeats: true)
+        }
     }
 
     private func configureCitiesPickerView() {
