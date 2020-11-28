@@ -11,8 +11,10 @@ class ImagesOfTheDayController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
-        tabBarItem = UITabBarItem(title: "Images of the day", image: nil, selectedImage: nil)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
     }
 

@@ -15,11 +15,14 @@ class TabbarController: UITabBarController {
         let weatherTodayController = WeatherTodayController()
         let imagesOfTheDayController = ImagesOfTheDayController()
 
+        imagesOfTheDayController.tabBarItem = UITabBarItem(title: "Images of the day", image: nil, selectedImage: nil)
+        weatherTodayController.tabBarItem = UITabBarItem(title: "Weather today", image: nil, selectedImage: nil)
+        self.tabBar.tintColor = .red
+        
         let viewControllers = [
             weatherTodayController,
             imagesOfTheDayController
         ]
-
         self.viewControllers = viewControllers
     }
 
