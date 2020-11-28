@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C9AA5E26257236C300538166 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA5E25257236C300538166 /* AppDelegate.swift */; };
-		C9AA5E28257236C300538166 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA5E27257236C300538166 /* SceneDelegate.swift */; };
-		C9AA5E2A257236C300538166 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA5E29257236C300538166 /* ViewController.swift */; };
-		C9AA5E2D257236C300538166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5E2B257236C300538166 /* Main.storyboard */; };
 		C9AA5E2F257236C500538166 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5E2E257236C500538166 /* Assets.xcassets */; };
 		C9AA5E32257236C500538166 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9AA5E30257236C500538166 /* LaunchScreen.storyboard */; };
 		C9AA5E3D257236C500538166 /* MyFancyWeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA5E3C257236C500538166 /* MyFancyWeatherAppTests.swift */; };
@@ -37,9 +34,6 @@
 /* Begin PBXFileReference section */
 		C9AA5E22257236C300538166 /* MyFancyWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFancyWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AA5E25257236C300538166 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C9AA5E27257236C300538166 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C9AA5E29257236C300538166 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C9AA5E2C257236C300538166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9AA5E2E257236C500538166 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9AA5E31257236C500538166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9AA5E33257236C500538166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,9 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				C9AA5E25257236C300538166 /* AppDelegate.swift */,
-				C9AA5E27257236C300538166 /* SceneDelegate.swift */,
-				C9AA5E29257236C300538166 /* ViewController.swift */,
-				C9AA5E2B257236C300538166 /* Main.storyboard */,
 				C9AA5E2E257236C500538166 /* Assets.xcassets */,
 				C9AA5E30257236C500538166 /* LaunchScreen.storyboard */,
 				C9AA5E33257236C500538166 /* Info.plist */,
@@ -233,7 +224,6 @@
 			files = (
 				C9AA5E32257236C500538166 /* LaunchScreen.storyboard in Resources */,
 				C9AA5E2F257236C500538166 /* Assets.xcassets in Resources */,
-				C9AA5E2D257236C300538166 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9AA5E2A257236C300538166 /* ViewController.swift in Sources */,
 				C9AA5E26257236C300538166 /* AppDelegate.swift in Sources */,
-				C9AA5E28257236C300538166 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +284,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C9AA5E2B257236C300538166 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C9AA5E2C257236C300538166 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C9AA5E30257236C500538166 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -439,6 +419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDZ9JJAWHH;
 				INFOPLIST_FILE = MyFancyWeatherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,7 +427,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SanadBarjawi.MyFancyWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -458,6 +439,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDZ9JJAWHH;
 				INFOPLIST_FILE = MyFancyWeatherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,7 +447,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SanadBarjawi.MyFancyWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
