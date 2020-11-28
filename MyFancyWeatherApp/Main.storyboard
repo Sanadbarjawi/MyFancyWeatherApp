@@ -55,6 +55,7 @@
                     </view>
                     <connections>
                         <outlet property="citiesPickerView" destination="7kr-LV-7LN" id="pzv-9t-uyB"/>
+                        <outlet property="cityStatusLabel" destination="At3-dT-ptF" id="11D-kC-TJi"/>
                         <outlet property="tableView" destination="aeZ-rU-Fb1" id="NAc-kV-icN"/>
                     </connections>
                 </viewController>

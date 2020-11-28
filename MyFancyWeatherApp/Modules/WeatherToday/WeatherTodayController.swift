@@ -8,9 +8,10 @@
 import UIKit
 
 final class WeatherTodayController: UIViewController {
+    
     @IBOutlet private weak var tableView: UITableView!
-
     @IBOutlet private weak var citiesPickerView: UIPickerView!
+    @IBOutlet private weak var cityStatusLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +26,6 @@ final class WeatherTodayController: UIViewController {
 
     private func configureTableView() {
         tableView.dataSource = self
-
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.tableFooterView = UIView()
     }
 }

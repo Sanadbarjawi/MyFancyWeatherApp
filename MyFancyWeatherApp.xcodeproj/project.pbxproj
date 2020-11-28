@@ -13,6 +13,8 @@
 		C930EA212572C859005EA823 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930EA202572C859005EA823 /* HTTPMethod.swift */; };
 		C930EA242572CC22005EA823 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930EA232572CC22005EA823 /* DictionaryExtension.swift */; };
 		C930EA282572D872005EA823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C930EA272572D872005EA823 /* Main.storyboard */; };
+		C930EA2E2572DC81005EA823 /* WeatherTodayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930EA2D2572DC81005EA823 /* WeatherTodayPresenter.swift */; };
+		C930EA3F2572DD14005EA823 /* BaseMVP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930EA3E2572DD14005EA823 /* BaseMVP.swift */; };
 		C9882B082572B00A00D23D8E /* WeatherTodayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9882B072572B00A00D23D8E /* WeatherTodayController.swift */; };
 		C9882B0D2572B08000D23D8E /* ImagesOfTheDayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9882B0C2572B08000D23D8E /* ImagesOfTheDayController.swift */; };
 		C9AA5E26257236C300538166 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA5E25257236C300538166 /* AppDelegate.swift */; };
@@ -30,6 +32,8 @@
 		C930EA202572C859005EA823 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		C930EA232572CC22005EA823 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		C930EA272572D872005EA823 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C930EA2D2572DC81005EA823 /* WeatherTodayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTodayPresenter.swift; sourceTree = "<group>"; };
+		C930EA3E2572DD14005EA823 /* BaseMVP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMVP.swift; sourceTree = "<group>"; };
 		C9882B072572B00A00D23D8E /* WeatherTodayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTodayController.swift; sourceTree = "<group>"; };
 		C9882B0C2572B08000D23D8E /* ImagesOfTheDayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesOfTheDayController.swift; sourceTree = "<group>"; };
 		C9AA5E22257236C300538166 /* MyFancyWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFancyWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C930EA3D2572DCFE005EA823 /* BaseArch */ = {
+			isa = PBXGroup;
+			children = (
+				C930EA3E2572DD14005EA823 /* BaseMVP.swift */,
+			);
+			path = BaseArch;
+			sourceTree = "<group>";
+		};
 		C9AA5E19257236C300538166 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +86,7 @@
 		C9AA5E24257236C300538166 /* MyFancyWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				C930EA3D2572DCFE005EA823 /* BaseArch */,
 				C9AA5E25257236C300538166 /* AppDelegate.swift */,
 				C930EA272572D872005EA823 /* Main.storyboard */,
 				C9CB5F9D2572C51B003CD569 /* Modules */,
@@ -90,6 +103,7 @@
 			children = (
 				C9882B072572B00A00D23D8E /* WeatherTodayController.swift */,
 				C9CB5F912572C32F003CD569 /* WeatherDataModel.swift */,
+				C930EA2D2572DC81005EA823 /* WeatherTodayPresenter.swift */,
 			);
 			path = WeatherToday;
 			sourceTree = "<group>";
@@ -215,6 +229,7 @@
 			files = (
 				C9AA5E26257236C300538166 /* AppDelegate.swift in Sources */,
 				C930EA1B2572C80C005EA823 /* NetworkingInterface.swift in Sources */,
+				C930EA3F2572DD14005EA823 /* BaseMVP.swift in Sources */,
 				C9CB5F8F2572C13B003CD569 /* Environment.swift in Sources */,
 				C930EA242572CC22005EA823 /* DictionaryExtension.swift in Sources */,
 				C930EA212572C859005EA823 /* HTTPMethod.swift in Sources */,
@@ -224,6 +239,7 @@
 				C930EA182572C76E005EA823 /* NetworkingManager.swift in Sources */,
 				C9882B082572B00A00D23D8E /* WeatherTodayController.swift in Sources */,
 				C9882B0D2572B08000D23D8E /* ImagesOfTheDayController.swift in Sources */,
+				C930EA2E2572DC81005EA823 /* WeatherTodayPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
