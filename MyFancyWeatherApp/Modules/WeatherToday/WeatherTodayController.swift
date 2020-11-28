@@ -58,8 +58,11 @@ extension WeatherTodayController: UIPickerViewDelegate {
 extension WeatherTodayController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     
-        return UITableViewCell()
+        let identifer = presenter.getWeatherItemsToPresent().identifiers[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifer, for: indexPath) as? Cellable & UITableViewCell else {return UITableViewCell()}
+
+        return cell
+
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -67,14 +70,14 @@ extension WeatherTodayController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.getWeatherItemsToPresent().count
+        return presenter.getWeatherItemsToPresent().Count
     }
 
 }
 
 extension WeatherTodayController: WeatherTodayView {
     func didSucceed() {
-
+        tableView.reloadData()
     }
 
     func didFail(with error: NSError) {

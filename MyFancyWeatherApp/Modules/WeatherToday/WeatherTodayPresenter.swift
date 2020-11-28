@@ -49,7 +49,7 @@ class WeatherTodayPresenter: BasePresenter {
         }
     }
 
-    func getWeatherItemsToPresent() -> [Configurable] {
+    func getWeatherItemsToPresent() -> (Count: Int, identifiers: [String]) {
         var items: [Configurable] = []
         if let data = weatherData {
             items.append(data.main)
@@ -57,7 +57,7 @@ class WeatherTodayPresenter: BasePresenter {
             items.append(data.wind)
             items.append(data.weather.first!)
         }
-        return items
+        return (items.count, items.map{($0.cellIdentifier ?? "not implemented")})
     }
 
 }

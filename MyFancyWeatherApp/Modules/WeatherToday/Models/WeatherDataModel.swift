@@ -54,12 +54,19 @@ struct Main: Codable, Configurable {
 struct Wind: Codable, Configurable {
     let speed: Double
     let deg: Int
+
+    var cellIdentifier: String? {
+        return "\(WindTableCell.self)"
+    }
 }
 
 
 // MARK: - Clouds
 struct Clouds: Codable, Configurable {
     let all: Int
+    var cellIdentifier: String? {
+        return "\(CloudTableCell.self)"
+    }
 }
 
 
