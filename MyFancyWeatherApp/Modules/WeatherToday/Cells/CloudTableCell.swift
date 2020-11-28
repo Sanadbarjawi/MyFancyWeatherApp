@@ -13,7 +13,7 @@ class CloudTableCell: UITableViewCell, Cellable {
 
     func configure(_ object: Configurable?) {
         if let cloud = object as? Clouds {
-            allLabel.text = String.init(format: "%d", cloud.all)
+            allLabel.text = "\(cloud.all)" 
         }
     }
 

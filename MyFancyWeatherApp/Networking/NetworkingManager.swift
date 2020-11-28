@@ -36,14 +36,14 @@ extension Networking: NetworkingProtocol {
                  parameters: [String: Any]?,
                  responseCompletition: @escaping NetworkingCompletionHandler) {
 
-        guard let url = URL(string: endPoint.path) else { return }
+        guard var components = URLComponents(string: endPoint.path) else { return }
 
-        var request = URLRequest(url: url)
+        let queryItems = parameters?.map{URLQueryItem.init(name: $0.key, value: $0.value as? String)}
+        components.queryItems = queryItems
 
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        var request = URLRequest(url: components.url!)
+
         request.httpMethod = method.rawValue
-
-        request.httpBody = parameters?.percentEncoded()
 
         let task = session?.dataTask(with: request) { data, response, error in
 
@@ -51,7 +51,6 @@ extension Networking: NetworkingProtocol {
                   let response = response as? HTTPURLResponse,
                   let statusCode = StatusCode(response),
                   error == nil
-
             else { // check for fundamental networking error
                 print("error", error ?? "Unknown error")
                 return

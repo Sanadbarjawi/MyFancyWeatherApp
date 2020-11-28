@@ -14,8 +14,8 @@ class WindTableCell: UITableViewCell, Cellable {
 
     func configure(_ object: Configurable?) {
         if let wind = object as? Wind {
-            speedLabel.text = String.init(format: "%d", wind.speed)
-            degreeLabel.text = String.init(format: "%d", wind.deg)
+            speedLabel.text = "\(wind.speed)"
+            degreeLabel.text = "\(wind.deg)"
 
         }
     }

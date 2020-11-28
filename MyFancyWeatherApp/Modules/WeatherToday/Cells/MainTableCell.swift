@@ -14,9 +14,8 @@ class MainTableCell: UITableViewCell, Cellable {
 
     func configure(_ object: Configurable?) {
         if let main = object as? Main {
-            tempLabel.text = String.init(format: "%d", main.temp)
-            feelsLikeValueLabel.text = String.init(format: "%d", main.feelsLike)
-
+            tempLabel.text = "\(main.temp)"
+            feelsLikeValueLabel.text = "\(main.feelsLike)"
         }
     }
 

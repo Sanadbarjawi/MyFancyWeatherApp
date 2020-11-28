@@ -9,11 +9,11 @@ import Foundation
 
 protocol WeatherTodayView: BaseView {}
 
-class WeatherTodayPresenter: BasePresenter {
+final class WeatherTodayPresenter: BasePresenter {
 
     weak var view: WeatherTodayView?
 
-    let service: WeatherService
+    private let service: WeatherService
 
     let countries: [CountryModel] = [
         CountryModel(id:1710116, name: "Jordan"),
@@ -23,7 +23,18 @@ class WeatherTodayPresenter: BasePresenter {
         CountryModel(id:130758, name: "Islamic Republic of Iran"),
     ]
 
-    private(set) var weatherData: WeatherData?
+    private var items: [Configurable] = []
+
+    private(set) var weatherData: WeatherData? {
+        willSet {
+            items = []
+            if let data = newValue {
+                items.append(data.main)
+                items.append(data.clouds)
+                items.append(data.wind)
+            }
+        }
+    }
 
     init(_ weatherService: WeatherService) {
         self.service = weatherService
@@ -49,15 +60,11 @@ class WeatherTodayPresenter: BasePresenter {
         }
     }
 
-    func getWeatherItemsToPresent() -> (Count: Int, identifiers: [String]) {
-        var items: [Configurable] = []
-        if let data = weatherData {
-            items.append(data.main)
-            items.append(data.clouds)
-            items.append(data.wind)
-            items.append(data.weather.first!)
-        }
-        return (items.count, items.map{($0.cellIdentifier ?? "not implemented")})
+    func getWeatherItemsToPresent() -> (Count: Int,
+                                        identifiers: [String],
+                                        data: [Configurable]) {
+
+        return (items.count, items.map{($0.cellIdentifier ?? "not implemented")}, items)
     }
 
 }

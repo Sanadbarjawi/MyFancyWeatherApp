@@ -21,6 +21,7 @@ final class WeatherTodayController: BaseMvpController<WeatherTodayView, WeatherT
         super.viewDidLoad()
         configureCitiesPickerView()
         configureTableView()
+        presenter.getWeatherData(for: presenter.countries.first?.id ?? 0)
     }
 
     private func configureCitiesPickerView() {
@@ -61,6 +62,7 @@ extension WeatherTodayController: UITableViewDataSource {
         let identifer = presenter.getWeatherItemsToPresent().identifiers[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifer, for: indexPath) as? Cellable & UITableViewCell else {return UITableViewCell()}
 
+        cell.configure(presenter.getWeatherItemsToPresent().data[indexPath.row])
         return cell
 
     }
@@ -78,18 +80,13 @@ extension WeatherTodayController: UITableViewDataSource {
 extension WeatherTodayController: WeatherTodayView {
     func didSucceed() {
         tableView.reloadData()
+        cityStatusLabel.text = presenter.weatherData?.weather.first?.main
     }
 
-    func didFail(with error: NSError) {
+    func didFail(with error: NSError) {}
 
-    }
+    func startLoading() {}
 
-    func startLoading() {
-
-    }
-
-    func stopLoading() {
-
-    }
+    func stopLoading() {}
 
 }
