@@ -23,12 +23,12 @@ extension EndPoints: Pathable {
 
     var path: String {
         switch self {
-        //// /data/2.5/weather?id={city id}&appid={API key}
-        case .weather : return "/data/2.5/weather"
+
+        case .weather : return fullWeatherServiceURL("/data/2.5/weather")
         }
     }
 
-    private func fullURL(_ path: String) -> String {
+    private func fullWeatherServiceURL(_ path: String) -> String {
 
         return String(format: "%@%@", Configuration.serverURL, path)
     }

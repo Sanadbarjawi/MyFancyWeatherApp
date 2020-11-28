@@ -7,9 +7,7 @@
 
 import Foundation
 
-protocol WeatherTodayView: BaseView {
-
-}
+protocol WeatherTodayView: BaseView {}
 
 class WeatherTodayPresenter: BasePresenter {
 

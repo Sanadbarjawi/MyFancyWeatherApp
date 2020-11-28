@@ -15,6 +15,7 @@
 		C930EA282572D872005EA823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C930EA272572D872005EA823 /* Main.storyboard */; };
 		C930EA2E2572DC81005EA823 /* WeatherTodayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930EA2D2572DC81005EA823 /* WeatherTodayPresenter.swift */; };
 		C930EA3F2572DD14005EA823 /* BaseMVP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930EA3E2572DD14005EA823 /* BaseMVP.swift */; };
+		C930EA432572DE75005EA823 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930EA422572DE75005EA823 /* WeatherService.swift */; };
 		C9882B082572B00A00D23D8E /* WeatherTodayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9882B072572B00A00D23D8E /* WeatherTodayController.swift */; };
 		C9882B0D2572B08000D23D8E /* ImagesOfTheDayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9882B0C2572B08000D23D8E /* ImagesOfTheDayController.swift */; };
 		C9AA5E26257236C300538166 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AA5E25257236C300538166 /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		C930EA272572D872005EA823 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C930EA2D2572DC81005EA823 /* WeatherTodayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTodayPresenter.swift; sourceTree = "<group>"; };
 		C930EA3E2572DD14005EA823 /* BaseMVP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMVP.swift; sourceTree = "<group>"; };
+		C930EA422572DE75005EA823 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		C9882B072572B00A00D23D8E /* WeatherTodayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTodayController.swift; sourceTree = "<group>"; };
 		C9882B0C2572B08000D23D8E /* ImagesOfTheDayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesOfTheDayController.swift; sourceTree = "<group>"; };
 		C9AA5E22257236C300538166 /* MyFancyWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFancyWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +103,7 @@
 		C9CB5F962572C47F003CD569 /* WeatherToday */ = {
 			isa = PBXGroup;
 			children = (
+				C930EA422572DE75005EA823 /* WeatherService.swift */,
 				C9882B072572B00A00D23D8E /* WeatherTodayController.swift */,
 				C9CB5F912572C32F003CD569 /* WeatherDataModel.swift */,
 				C930EA2D2572DC81005EA823 /* WeatherTodayPresenter.swift */,
@@ -230,6 +233,7 @@
 				C9AA5E26257236C300538166 /* AppDelegate.swift in Sources */,
 				C930EA1B2572C80C005EA823 /* NetworkingInterface.swift in Sources */,
 				C930EA3F2572DD14005EA823 /* BaseMVP.swift in Sources */,
+				C930EA432572DE75005EA823 /* WeatherService.swift in Sources */,
 				C9CB5F8F2572C13B003CD569 /* Environment.swift in Sources */,
 				C930EA242572CC22005EA823 /* DictionaryExtension.swift in Sources */,
 				C930EA212572C859005EA823 /* HTTPMethod.swift in Sources */,
