@@ -36,6 +36,7 @@
 		C9CB5F8C2572C0D6003CD569 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB5F8B2572C0D6003CD569 /* EndPoints.swift */; };
 		C9CB5F8F2572C13B003CD569 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB5F8E2572C13B003CD569 /* Environment.swift */; };
 		C9CB5F922572C32F003CD569 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB5F912572C32F003CD569 /* WeatherDataModel.swift */; };
+		C9FDF5532573285D00E0BE14 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9FDF5552573285D00E0BE14 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,9 @@
 		C9CB5F8B2572C0D6003CD569 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		C9CB5F8E2572C13B003CD569 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		C9CB5F912572C32F003CD569 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
+		C9FDF54B257327BB00E0BE14 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C9FDF5542573285D00E0BE14 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C9FDF5572573286400E0BE14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CF3F904AA32B60C77F90A3A2 /* Pods-MyFancyWeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFancyWeatherApp.release.xcconfig"; path = "Target Support Files/Pods-MyFancyWeatherApp/Pods-MyFancyWeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +194,7 @@
 				C9CB5F9A2572C4E2003CD569 /* Environment */,
 				C9CB5F992572C4B3003CD569 /* Resources */,
 				C930EA232572CC22005EA823 /* DictionaryExtension.swift */,
+				C9FDF5552573285D00E0BE14 /* Localizable.strings */,
 			);
 			path = MyFancyWeatherApp;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = C9AA5E19257236C300538166;
 			productRefGroup = C9AA5E23257236C300538166 /* Products */;
@@ -316,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FDF5532573285D00E0BE14 /* Localizable.strings in Resources */,
 				C930EA282572D872005EA823 /* Main.storyboard in Resources */,
 				C9AA5E32257236C500538166 /* LaunchScreen.storyboard in Resources */,
 				C9AA5E2F257236C500538166 /* Assets.xcassets in Resources */,
@@ -406,8 +413,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				C9AA5E31257236C500538166 /* Base */,
+				C9FDF54B257327BB00E0BE14 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C9FDF5552573285D00E0BE14 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9FDF5542573285D00E0BE14 /* ar */,
+				C9FDF5572573286400E0BE14 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -417,6 +434,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -478,6 +496,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
