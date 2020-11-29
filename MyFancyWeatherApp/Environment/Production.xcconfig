@@ -1,0 +1,15 @@
+//
+//  Production.xcconfig
+//  MyFancyWeatherApp
+//
+//  Created by Sanad Barjawi on 28/11/2020.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "Pods/Target Support Files/Pods-MyFancyWeatherApp/Pods-MyFancyWeatherApp.release.xcconfig"
+
+SLASH = /
+HOST_NAME = api.openweathermap.org
+SERVER_URL = http:$(SLASH)/$(HOST_NAME)
+API_KEY = d05d9f5d867f7981df3769eaabac3950
