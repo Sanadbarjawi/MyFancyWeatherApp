@@ -20,6 +20,7 @@ final class WeatherTodayController: BaseMvpController<WeatherTodayView, WeatherT
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavStyle()
         configureCitiesPickerView()
         configureTableView()
         presenter.getWeatherData()
@@ -38,6 +39,14 @@ final class WeatherTodayController: BaseMvpController<WeatherTodayView, WeatherT
         citiesPickerView.dataSource = self
         citiesPickerView.selectRow(presenter.getSelectedRow(), inComponent: 0, animated: true)
 
+    }
+
+    private func configureNavStyle() {
+        let attrs = [
+            NSAttributedString.Key.foregroundColor: UIColor.label,
+            NSAttributedString.Key.font: UIFont(name: "JosefinSans-Semibold", size: 33)!
+        ]
+        navigationController?.navigationBar.largeTitleTextAttributes = attrs
     }
 
     private func configureTableView() {

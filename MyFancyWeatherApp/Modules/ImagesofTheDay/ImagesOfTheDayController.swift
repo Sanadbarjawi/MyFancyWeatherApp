@@ -25,7 +25,7 @@ class ImagesOfTheDayController: UITableViewController {
         tableView.addPulltoRefreshControl(controller: self, shouldIncludeSafeArea: false, doing: #selector(loadImages), with: NSAttributedString(string: "loading ..."), tintColor: .black)
         tableView.tableFooterView = UIView()
         loadImages()
-        
+
         dispatchGroup.notify(queue: .main) {
             self.tableView.reloadData()
             self.tableView.layoutIfNeeded()

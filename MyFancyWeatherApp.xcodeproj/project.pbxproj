@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B9B4277D1659A9FE50C5AB25 /* Pods_MyFancyWeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A780D2108DFB4C99472DD3 /* Pods_MyFancyWeatherApp.framework */; };
 		C9219019257321730040A58D /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9219018257321730040A58D /* UIScrollViewExtension.swift */; };
+		C921901D257323050040A58D /* JosefinSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C921901C257322F60040A58D /* JosefinSans-Semibold.ttf */; };
 		C92509F52572EFD600EB1ED9 /* WindTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92509F42572EFD600EB1ED9 /* WindTableCell.swift */; };
 		C92509F92572EFE300EB1ED9 /* CloudTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92509F82572EFE300EB1ED9 /* CloudTableCell.swift */; };
 		C92509FC257301D500EB1ED9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92509FB257301D500EB1ED9 /* Constants.swift */; };
@@ -41,6 +42,7 @@
 		39A780D2108DFB4C99472DD3 /* Pods_MyFancyWeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFancyWeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B79E1EBB6CA597B084EF056 /* Pods-MyFancyWeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFancyWeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-MyFancyWeatherApp/Pods-MyFancyWeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C9219018257321730040A58D /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
+		C921901C257322F60040A58D /* JosefinSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Semibold.ttf"; sourceTree = "<group>"; };
 		C92509F42572EFD600EB1ED9 /* WindTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindTableCell.swift; sourceTree = "<group>"; };
 		C92509F82572EFE300EB1ED9 /* CloudTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTableCell.swift; sourceTree = "<group>"; };
 		C92509FB257301D500EB1ED9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 				CF3F904AA32B60C77F90A3A2 /* Pods-MyFancyWeatherApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C921901B257322E30040A58D /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				C921901C257322F60040A58D /* JosefinSans-Semibold.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		C930EA3D2572DCFE005EA823 /* BaseArch */ = {
@@ -208,6 +218,7 @@
 		C9CB5F992572C4B3003CD569 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C921901B257322E30040A58D /* Font */,
 				C9AA5E30257236C500538166 /* LaunchScreen.storyboard */,
 				C9AA5E2E257236C500538166 /* Assets.xcassets */,
 				C9AA5E33257236C500538166 /* Info.plist */,
@@ -308,6 +319,7 @@
 				C930EA282572D872005EA823 /* Main.storyboard in Resources */,
 				C9AA5E32257236C500538166 /* LaunchScreen.storyboard in Resources */,
 				C9AA5E2F257236C500538166 /* Assets.xcassets in Resources */,
+				C921901D257323050040A58D /* JosefinSans-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
