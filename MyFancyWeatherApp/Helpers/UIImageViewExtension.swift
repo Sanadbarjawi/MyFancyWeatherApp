@@ -43,17 +43,19 @@ extension UIImageView {
                          })
     }
 
-    func getImageNatively(using urlString: String) {
+    func getImageNatively(using urlString: String, completion : @escaping (UIImage?) -> Void) {
         guard let url = URL(string: urlString) else {return}
-
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url) {
+        let dataTask = URLSession.shared.dataTask(with: url) {  (data, _, _) in
+            if let data = data {
                 DispatchQueue.main.async {
-                    self.image = UIImage(data: data)
+                    // Create Image and Update Image View
+                    completion(UIImage(data: data))
                 }
             }
         }
+
+        // Start Data Task
+        dataTask.resume()
     }
-    
 
 }

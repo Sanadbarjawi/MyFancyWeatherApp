@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		B9B4277D1659A9FE50C5AB25 /* Pods_MyFancyWeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A780D2108DFB4C99472DD3 /* Pods_MyFancyWeatherApp.framework */; };
+		C9219019257321730040A58D /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9219018257321730040A58D /* UIScrollViewExtension.swift */; };
 		C92509F52572EFD600EB1ED9 /* WindTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92509F42572EFD600EB1ED9 /* WindTableCell.swift */; };
 		C92509F92572EFE300EB1ED9 /* CloudTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92509F82572EFE300EB1ED9 /* CloudTableCell.swift */; };
 		C92509FC257301D500EB1ED9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92509FB257301D500EB1ED9 /* Constants.swift */; };
 		C92509FF2573052500EB1ED9 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92509FE2573052500EB1ED9 /* UserDefaultsHelper.swift */; };
 		C9250A0525730A8A00EB1ED9 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9250A0425730A8A00EB1ED9 /* UIImageViewExtension.swift */; };
+		C9250A082573127800EB1ED9 /* ImageofTheDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9250A072573127800EB1ED9 /* ImageofTheDayCell.swift */; };
 		C930EA182572C76E005EA823 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930EA172572C76E005EA823 /* NetworkingManager.swift */; };
 		C930EA1B2572C80C005EA823 /* NetworkingInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930EA1A2572C80B005EA823 /* NetworkingInterface.swift */; };
 		C930EA1E2572C824005EA823 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930EA1D2572C824005EA823 /* StatusCode.swift */; };
@@ -38,11 +40,13 @@
 /* Begin PBXFileReference section */
 		39A780D2108DFB4C99472DD3 /* Pods_MyFancyWeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFancyWeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B79E1EBB6CA597B084EF056 /* Pods-MyFancyWeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFancyWeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-MyFancyWeatherApp/Pods-MyFancyWeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C9219018257321730040A58D /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
 		C92509F42572EFD600EB1ED9 /* WindTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindTableCell.swift; sourceTree = "<group>"; };
 		C92509F82572EFE300EB1ED9 /* CloudTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTableCell.swift; sourceTree = "<group>"; };
 		C92509FB257301D500EB1ED9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C92509FE2573052500EB1ED9 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		C9250A0425730A8A00EB1ED9 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		C9250A072573127800EB1ED9 /* ImageofTheDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageofTheDayCell.swift; sourceTree = "<group>"; };
 		C930EA172572C76E005EA823 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		C930EA1A2572C80B005EA823 /* NetworkingInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingInterface.swift; sourceTree = "<group>"; };
 		C930EA1D2572C824005EA823 /* StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 				C92509FB257301D500EB1ED9 /* Constants.swift */,
 				C92509FE2573052500EB1ED9 /* UserDefaultsHelper.swift */,
 				C9250A0425730A8A00EB1ED9 /* UIImageViewExtension.swift */,
+				C9219018257321730040A58D /* UIScrollViewExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				C9882B0C2572B08000D23D8E /* ImagesOfTheDayController.swift */,
+				C9250A072573127800EB1ED9 /* ImageofTheDayCell.swift */,
 			);
 			path = ImagesofTheDay;
 			sourceTree = "<group>";
@@ -358,12 +364,14 @@
 				C9AA5E26257236C300538166 /* AppDelegate.swift in Sources */,
 				C930EA1B2572C80C005EA823 /* NetworkingInterface.swift in Sources */,
 				C930EA3F2572DD14005EA823 /* BaseMVP.swift in Sources */,
+				C9250A082573127800EB1ED9 /* ImageofTheDayCell.swift in Sources */,
 				C930EA432572DE75005EA823 /* WeatherService.swift in Sources */,
 				C92509F52572EFD600EB1ED9 /* WindTableCell.swift in Sources */,
 				C9250A0525730A8A00EB1ED9 /* UIImageViewExtension.swift in Sources */,
 				C930EA552572E777005EA823 /* CellAbstraction.swift in Sources */,
 				C9CB5F8F2572C13B003CD569 /* Environment.swift in Sources */,
 				C930EA242572CC22005EA823 /* DictionaryExtension.swift in Sources */,
+				C9219019257321730040A58D /* UIScrollViewExtension.swift in Sources */,
 				C930EA212572C859005EA823 /* HTTPMethod.swift in Sources */,
 				C9CB5F922572C32F003CD569 /* WeatherDataModel.swift in Sources */,
 				C930EA502572E73F005EA823 /* MainTableCell.swift in Sources */,
