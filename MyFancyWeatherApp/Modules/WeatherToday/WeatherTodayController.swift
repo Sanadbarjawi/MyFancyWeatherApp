@@ -25,7 +25,6 @@ final class WeatherTodayController: BaseMvpController<WeatherTodayView, WeatherT
         configureTableView()
         presenter.getWeatherData()
         configureAutomaticRefresh()
-        configureAutomaticRefresh()
     }
 
     private func configureAutomaticRefresh() {
