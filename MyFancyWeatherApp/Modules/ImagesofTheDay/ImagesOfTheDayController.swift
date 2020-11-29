@@ -8,7 +8,7 @@
 import UIKit
 
 class ImagesOfTheDayController: UITableViewController {
-    // Create an instance
+
     var dispatchGroup = DispatchGroup()
 
     var downloadedImages: [UIImage] = []
@@ -25,7 +25,7 @@ class ImagesOfTheDayController: UITableViewController {
         tableView.addPulltoRefreshControl(controller: self, shouldIncludeSafeArea: false, doing: #selector(loadImages), with: NSAttributedString(string: "loading ..."), tintColor: .black)
         tableView.tableFooterView = UIView()
         loadImages()
-        // We have to listen group, and that we update tableView or UI todo
+        
         dispatchGroup.notify(queue: .main) {
             self.tableView.reloadData()
             self.tableView.layoutIfNeeded()
@@ -50,10 +50,8 @@ class ImagesOfTheDayController: UITableViewController {
 @objc
     func loadImages() {
         tableView.beginRefreshing()
-        // Every round of loop, we enter the group
         for img in imagesOfTheDayDataSource {
 
-            // Join the group
             dispatchGroup.enter()
             let imgDownload = UIImageView()
             imgDownload.getImageNatively(using: img) {[weak self] downloadedImage in
@@ -61,7 +59,6 @@ class ImagesOfTheDayController: UITableViewController {
                     self?.downloadedImages.append(foundImage)
                 }
 
-                // And leave group when task is done
                 self?.dispatchGroup.leave()
 
             }
