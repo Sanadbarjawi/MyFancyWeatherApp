@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ImagesOfTheDayController: UITableViewController {
+final class ImagesOfTheDayController: UITableViewController {
 
-    var dispatchGroup = DispatchGroup()
+    private var dispatchGroup = DispatchGroup()
 
-    var downloadedImages: [UIImage] = []
+    private var downloadedImages: [UIImage] = []
 
-    var imagesOfTheDayDataSource: [String] = [
+    private var imagesOfTheDayDataSource: [String] = [
         "https://upload.wikimedia.org/wikipedia/commons/7/74/Earth_poster_large.jpg",
         "http://kenrockwell.com/nikon/d600/sample-images/600_0985.JPG",
         "http://www.austal.com/sites/default/files/media-images/DSC06071.JPG",
@@ -48,7 +48,7 @@ class ImagesOfTheDayController: UITableViewController {
     }
 
 @objc
-    func loadImages() {
+    private func loadImages() {
         tableView.beginRefreshing()
         for img in imagesOfTheDayDataSource {
 
