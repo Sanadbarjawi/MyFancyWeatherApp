@@ -9,29 +9,28 @@ import UIKit
 
 final class ImagesOfTheDayController: UITableViewController {
 
-    private var dispatchGroup = DispatchGroup()
+    let queue = OperationQueue()
 
     private var downloadedImages: [UIImage] = []
 
-    private var imagesOfTheDayDataSource: [String] = [
-        "https://upload.wikimedia.org/wikipedia/commons/7/74/Earth_poster_large.jpg",
-        "http://kenrockwell.com/nikon/d600/sample-images/600_0985.JPG",
-        "http://www.austal.com/sites/default/files/media-images/DSC06071.JPG",
-        "http://www.marinelink.com/images/maritime/265a5884ef314b6aa70b00d28e986cabweb-33268.jpg"
+    private var imagesOfTheDayDataSource: [URL] = [
+        URL(string: "https://upload.wikimedia.org/wikipedia/commons/7/74/Earth_poster_large.jpg")!,
+        URL(string: "http://kenrockwell.com/nikon/d600/sample-images/600_0985.JPG")!,
+        URL(string: "http://www.austal.com/sites/default/files/media-images/DSC06071.JPG")!,
+        URL(string: "http://www.marinelink.com/images/maritime/265a5884ef314b6aa70b00d28e986cabweb-33268.jpg")!,
     ]
+
+    fileprivate func configureTableView() {
+        tableView.addPulltoRefreshControl(controller: self, shouldIncludeSafeArea: false, doing: #selector(loadImages), with: NSAttributedString(string: "loading ..."), tintColor: .black)
+        tableView.tableFooterView = UIView()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.addPulltoRefreshControl(controller: self, shouldIncludeSafeArea: false, doing: #selector(loadImages), with: NSAttributedString(string: "loading ..."), tintColor: .black)
-        tableView.tableFooterView = UIView()
+        queue.maxConcurrentOperationCount = 1
+        configureTableView()
         loadImages()
 
-        dispatchGroup.notify(queue: .main) {
-            self.tableView.reloadData()
-            self.tableView.layoutIfNeeded()
-            self.tableView.layoutSubviews()
-            self.tableView.endRefreshing()
-        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,21 +49,30 @@ final class ImagesOfTheDayController: UITableViewController {
 @objc
     private func loadImages() {
         tableView.beginRefreshing()
-        for img in imagesOfTheDayDataSource {
 
-            dispatchGroup.enter()
-            let imgDownload = UIImageView()
-            imgDownload.getImageNatively(using: img) {[weak self] downloadedImage in
-                if let foundImage = downloadedImage {
-                    self?.downloadedImages.append(foundImage)
-                }
+        for imageURL in imagesOfTheDayDataSource {
 
-                self?.dispatchGroup.leave()
+            let operation = URLSessionDataTaskOperation(
+                session: URLSession.shared,
+                downloadTaskURL: imageURL,
+                completionHandler: {[weak self] (data, _, _) in
 
-            }
+                    DispatchQueue.main.async {// on each successful image response
+                        if let data = data, let image = UIImage(data: data) {
+                            self?.downloadedImages.append(image)
+                            self?.tableView.reloadData()
+                        }
+                    }
+
+                })
+
+            queue.addOperation(operation)
         }
 
+        queue.addBarrierBlock { [weak self] in // on queue completion
+            DispatchQueue.main.async{
+                self?.tableView.endRefreshing()
+            }
+        }
     }
-
-
 }
